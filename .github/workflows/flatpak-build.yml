@@ -18,7 +18,7 @@ jobs:
       - name: Add Flathub remote and install SDK/runtime (user mode)
         run: |
           flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-          flatpak install --user -y flathub org.freedesktop.Sdk//24.08 org.freedesktop.Platform//24.08
+          flatpak install --user -y flathub org.freedesktop.Sdk//24.08 org.freedesktop.Platform//24.08 org.electronjs.Electron2.BaseApp//24.08
 
       - name: Build Flatpak
         run: |
