@@ -10,4 +10,4 @@ if [ "${XDG_SESSION_TYPE}" = "wayland" ] && [ -e "${XDG_RUNTIME_DIR}/${WAYLAND_D
 fi
 
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}" 
-exec zypak-wrapper /app/freetube/freetube "${EXTRA_FLAGS[@]}" "$@"
+exec zypak-wrapper /app/imawal/freetube "${EXTRA_FLAGS[@]}" "$@"
