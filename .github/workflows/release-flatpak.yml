@@ -1,21 +1,25 @@
 name: Release Flatpak
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Release version (e.g., v1.0.0)'
-        required: true
-        type: string
+  pull_request:
+    types: [closed]
 
 jobs:
   build-and-release:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release-v')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Extract version
+        id: extract
+        run: |
+          BRANCH=${{ github.event.pull_request.head.ref }}
+          VERSION=${BRANCH#release-v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
 
       - name: Set up Flatpak and flatpak-builder
         run: |
@@ -39,14 +43,14 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git tag ${{ inputs.version }}
-          git push origin ${{ inputs.version }}
+          git tag v${{ steps.extract.outputs.version }}
+          git push origin v${{ steps.extract.outputs.version }}
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ inputs.version }}
-          name: Release ${{ inputs.version }}
+          tag_name: v${{ steps.extract.outputs.version }}
+          name: v${{ steps.extract.outputs.version }}
           files: FreeTube.flatpak
           draft: false
           prerelease: false
