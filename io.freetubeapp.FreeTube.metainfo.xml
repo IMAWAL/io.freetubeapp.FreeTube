@@ -55,6 +55,9 @@
     <display_length compare="ge">360</display_length>
   </requires>
   <releases>
+    <release version="0.23.9-5 Beta" date="2025-10-15">
+      <url>https://github.com/IMAWAL/FreeTube/releases/tag/v0.23.9-5-beta</url>
+    </release>
     <release version="0.23.9-4 Beta" date="2025-10-05">
       <url>https://github.com/IMAWAL/FreeTube/releases/tag/v0.23.9-4-beta</url>
     </release>
