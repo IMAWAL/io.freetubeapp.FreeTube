@@ -27,13 +27,13 @@ modules:
       - type: file
         only-arches:
           - x86_64
-        url: https://github.com/IMAWAL/FreeTube/releases/download/v0.24.0-4-beta/freetube-0.24.0-4-beta-linux-x64-portable.zip
-        sha256: d5bae77a98e1798eb35922e5293e87e2de83fcc62e78ee6515322b35ea929ab2
+        url: https://github.com/IMAWAL/FreeTube/releases/download/v0.24.0-5-beta/freetube-0.24.0-5-beta-linux-x64-portable.zip
+        sha256: df0db045e736c9548d692d2464465da27aa5b1ad13f04e4364dd8672902f61e1
       - type: file
         only-arches:
           - aarch64
-        url: https://github.com/IMAWAL/FreeTube/releases/download/v0.24.0-4-beta/freetube-0.24.0-4-beta-linux-arm64-portable.zip
-        sha256: 29f3309392ad72ee0b477f5520881d7799ca04ab82effd3ca7de2f6821e43622
+        url: https://github.com/IMAWAL/FreeTube/releases/download/v0.24.0-5-beta/freetube-0.24.0-5-beta-linux-arm64-portable.zip
+        sha256: e0633fca662473080a060b9f6f4891d4df6a85efa3b34779a358df94479a418f
       # Icon
       - type: file
         url: https://raw.githubusercontent.com/FreeTubeApp/FreeTube/master/_icons/icon.svg
